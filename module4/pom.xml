@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.example</groupId>
+		<artifactId>root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>module4</artifactId>
+	<packaging>pom</packaging>
+	<name>Sub MultiModule</name>
+	
+	<properties>
+		<akka.actors.version>2.5-M2</akka.actors.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<!-- Tu peux ajouter plus de dépendances managées, mais mieux de tout mettre dans le pom root -->
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-actor_2.11</artifactId>
+				<version>${akka.actors.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+	<modules>
+		<module>submodule1</module>
+		<module>submodule2</module>
+	</modules>
+</project>
